@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.env
+venv/
+env/
+*.egg-info/
+*.log
+
+# VS Code
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
