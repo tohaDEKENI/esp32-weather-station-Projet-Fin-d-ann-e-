@@ -7,7 +7,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-
     <!--Header-->
   <header>
     <div class="logo">
@@ -15,34 +14,45 @@
       <h1>Ma Station Météo</h1>
     </div>
     <div class="datetime" id="datetime">--:--</div>
+
   </header>
 
   <!---->
   <section class="data-section">
   <!-- Température -->
   <div class="data-card">
+     <span class="border-runner"></span> <!-- L'animation -->
     <img src="https://cdn-icons-png.flaticon.com/512/481/481873.png" alt="Icône température">
     <div class="data-title">Température</div>
     <div class="data-value" id="temperature">-- °C</div>
+    <progress id="progressBar" value="0" max="100"></progress>
   </div>
 
   <!-- Humidité -->
   <div class="data-card">
+     <span class="border-runner"></span> <!-- L'animation -->
     <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="Icône humidité">
     <div class="data-title">Humidité</div>
     <div class="data-value" id="humidity">-- %</div>
+    <progress id="progressBarHum" value="0" max="100"></progress>
   </div>
 </section>
+
 <section class="chart-section">
-  <h2>📈 Historique des données</h2>
+  <div>
+    <h2>📈 Historique des données</h2>
+    <a href="">Voir plus</a>
+  </div>
   <canvas id="weatherChart" ></canvas>
 </section>
 
 <footer>
   <p>🌐 Données fournies par un capteur DHT22 connecté à un ESP32</p>
-  <p>Site réalisé par <strong>DEKENI Toha et Eyanga EXAUCE</strong> – <a href="https://github.com/tonprofil" target="_blank">Voir sur GitHub</a></p>
+  <p>Site réalisé par <strong>DEKENI Toha et Eyanga EXAUCE</strong> – <a href="https://github.com/tohaDEKENI/esp32-weather-station-Projet-Fin-d-ann-e-"
+     target="_blank">Voir sur GitHub</a></p>
   <p>&copy; 2025 • Mini Station Météo</p>
 </footer>
+  <script src="getData.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
