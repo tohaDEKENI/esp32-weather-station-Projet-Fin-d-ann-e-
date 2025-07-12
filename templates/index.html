@@ -2,56 +2,74 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Ma Station Météo</title>
+  <title>Station Météo</title>
+
+  <!-- Fichier CSS externe pour le style -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Import de la bibliothèque Chart.js pour les graphiques -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-    <!--Header-->
+  <!-- En-tête avec logo et date/heure -->
   <header>
     <div class="logo">
       <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="Icône météo">
       <h1>Ma Station Météo</h1>
     </div>
-    <div class="datetime" id="datetime">--:--</div>
 
+    <!-- Date et heure actuelle -->
+    <div class="datetime" id="datetime">--:--</div>
   </header>
 
-  <!---->
+  <!-- Section principale avec température et humidité -->
   <section class="data-section">
-  <!-- Température -->
-  <div class="data-card">
-     <span class="border-runner"></span> <!-- L'animation -->
-    <img src="https://cdn-icons-png.flaticon.com/512/481/481873.png" alt="Icône température">
-    <div class="data-title">Température</div>
-    <div class="data-value" id="temperature">-- °C</div>
-    <progress id="progressBar" value="0" max="100"></progress>
-  </div>
 
-  <!-- Humidité -->
-  <div class="data-card">
-     <span class="border-runner"></span> <!-- L'animation -->
-    <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="Icône humidité">
-    <div class="data-title">Humidité</div>
-    <div class="data-value" id="humidity">-- %</div>
-    <progress id="progressBarHum" value="0" max="100"></progress>
-  </div>
-</section>
+    <!-- Carte Température -->
+    <div class="data-card">
+      <span class="border-runner"></span> <!-- Animation autour de la carte -->
+      <img src="https://cdn-icons-png.flaticon.com/512/481/481873.png" alt="Icône température">
+      <div class="data-title">Température</div>
+      <div class="data-value" id="temperature">-- °C</div>
+      <!-- Barre de progression pour visualiser la température -->
+      <progress id="progressBar" value="0" max="100"></progress>
+    </div>
 
-<section class="chart-section">
-  <div>
-    <h2>📈 Historique des données</h2>
-    <a href="">Voir plus</a>
-  </div>
-  <canvas id="weatherChart" ></canvas>
-</section>
+    <!-- Carte Humidité -->
+    <div class="data-card">
+      <span class="border-runner"></span> <!-- Animation autour de la carte -->
+      <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="Icône humidité">
+      <div class="data-title">Humidité</div>
+      <div class="data-value" id="humidity">-- %</div>
+      <!-- Barre de progression pour visualiser l'humidité -->
+      <progress id="progressBarHum" value="0" max="100"></progress>
+    </div>
+  </section>
 
-<footer>
-  <p>🌐 Données fournies par un capteur DHT22 connecté à un ESP32</p>
-  <p>Site réalisé par <strong>DEKENI Toha et Eyanga EXAUCE</strong> – <a href="https://github.com/tohaDEKENI/esp32-weather-station-Projet-Fin-d-ann-e-"
-     target="_blank">Voir sur GitHub</a></p>
-  <p>&copy; 2025 • Mini Station Météo</p>
-</footer>
+  <!-- Section graphique : historique des températures et humidités -->
+  <section class="chart-section">
+    <div>
+      <h2>📈 Historique des données</h2>
+      <a href=" http://localhost:8080/historique">Voir plus</a> <!-- Lien à compléter si besoin -->
+    </div>
+    <!-- Zone du graphique -->
+    <canvas id="weatherChart"></canvas>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>🌐 Données fournies par un capteur DHT22 connecté à un ESP32</p>
+    <p>Site réalisé par <strong>DEKENI Toha et Eyanga EXAUCE</strong> – 
+      <a href="https://github.com/tohaDEKENI/esp32-weather-station-Projet-Fin-d-ann-e-" target="_blank">
+        Voir sur GitHub
+      </a>
+    </p>
+    <p>&copy; 2025 • Mini Station Météo</p>
+    <img src="image.jpg" alt="" width="100px"> <!-- Logo ou image perso -->
+  </footer>
+
+  <!-- Scripts JavaScript pour récupérer et afficher les données -->
   <script src="getData.js"></script>
   <script src="script.js"></script>
 </body>

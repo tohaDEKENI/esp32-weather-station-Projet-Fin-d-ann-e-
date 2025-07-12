@@ -11,6 +11,14 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "templates", "index.html"));
 });
 
+app.get("/historique", (req, res) => {
+  res.sendFile(path.join(__dirname, "templates", "donnee.html"));
+});
+
+
+
+
+
 // Lancement du serveur
 app.listen(8080, () => {
   console.log("Serveur lancé sur le port 8080 : http://localhost:8080");

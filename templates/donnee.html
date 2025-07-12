@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        canvas {
+            width: 100%;
+            max-height: 500px;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            color: #333;
+        }
+
+        input[type="date"],
+        button {
+            padding: 10px;
+            margin: 10px 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #2196f3;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #1976d2;
+        }
+
+        h1,
+        h2 {
+            margin: 15px 0;
+        }
+
+        canvas {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            /* Supprime les doubles bordures */
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th,
+        .table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .table th {
+            background-color: #2196f3;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #e3f2fd;
+        }
+
+        .table tr:hover {
+            background-color: #bbdefb;
+            transition: background-color 0.3s ease;
+        }
+
+
+        @media (max-width: 600px) {
+            canvas {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="Icône météo">
+            <h1>Station Météo</h1>
+        </div>
+
+        <!-- Date et heure actuelle -->
+        <div class="datetime" id="datetime">--:--</div>
+    </header>
+    <input type="date" id="datePicker" />
+    <button onclick="getHistorique()">Afficher l'historique</button>
+
+    <!-- Informations sur la date choisie et les moyennes -->
+    <h2>Résumé des données :</h2>
+    <div id="data">
+        <h1>Sélectionnez une date pour voir les résultats.</h1>
+    </div>
+
+    <!-- Titre pour le graphique -->
+    <h2>Courbe des températures et humidités distinctes :</h2>
+    <canvas id="weatherChart2"></canvas>
+
+    <footer>
+    <p>🌐 Données fournies par un capteur DHT22 connecté à un ESP32</p>
+    <p>Site réalisé par <strong>DEKENI Toha et Eyanga EXAUCE</strong> – 
+      <a href="https://github.com/tohaDEKENI/esp32-weather-station-Projet-Fin-d-ann-e-" target="_blank">
+        Voir sur GitHub
+      </a>
+    </p>
+    <p>&copy; 2025 • Mini Station Météo</p>
+    <img src="image.jpg" alt="" width="100px"> <!-- Logo ou image perso -->
+  </footer>
+
+    <script src="historique.js"></script>
+
+</body>
+
+</html>
